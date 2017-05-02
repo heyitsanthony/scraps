@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// protoc --gofast_out=plugins=grpc,import_prefix=:. ./calc.proto 
+
+package calc;
+
+service Calc {
+  rpc Multiply (MultiplyRequest) returns (MultiplyResponse) {}
+}
+
+message MultiplyRequest {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message MultiplyResponse {
+  int32 z = 1;
+}
